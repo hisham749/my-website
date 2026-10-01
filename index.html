@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You Got Pranked!</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #080808;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 700px;
+        }
+
+        .emoji {
+            font-size: 90px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        h1 {
+            font-size: 70px;
+            margin: 20px 0;
+            color: #00e5ff;
+            text-shadow:
+                0 0 10px #00e5ff,
+                0 0 30px #00e5ff;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        p {
+            font-size: 25px;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #00e5ff;
+            color: #000;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px #00e5ff;
+        }
+
+        #message {
+            display: none;
+            margin-top: 25px;
+            font-size: 22px;
+            color: #00ff88;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #00e5ff;
+            }
+
+            to {
+                text-shadow:
+                    0 0 20px #00e5ff,
+                    0 0 50px #0077ff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="emoji">😂</div>
+
+        <h1>YOU GOT PRANKED!</h1>
+
+        <p>
+            Don't worry... nothing happened to your computer. 😎
+        </p>
+
+        <button onclick="showMessage()">
+            Click if you fell for it 😂
+        </button>
+
+        <div id="message">
+            🤣 GOTCHA! You really clicked it!
+        </div>
+
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+
+            // Change the button text
+            document.querySelector("button").innerText =
+                "😂 I GOT PRANKED!";
+
+            // Small harmless screen effect
+            document.body.style.background = "#111";
+
+            setTimeout(() => {
+                document.body.style.background = "#080808";
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
